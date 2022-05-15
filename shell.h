@@ -19,29 +19,29 @@
 extern char **environ;
 
 /**
- *  * struct list_s - linked list of variables
- *   * @value: value
- *    * @next: pointer to next node
- *     *
- *      * Description: generic linked list struct for variables.
- *      **/
+ * struct list_s - linked list of variables
+ * @value: value
+ * @next: pointer to next node
+ *
+ * Description: generic linked list struct for variables.
+ */
 typedef struct list_s
 {
-		char *value;
-			struct list_s *next;
+	char *value;
+	struct list_s *next;
 } list_s;
 
 /**
- *  * struct built_s - linked list of builtins
- *   * @name: name of builtin
- *    * @p: pointer to function
- *     *
- *      * Description: struct for builtin functions.
- *      **/
+ * struct built_s - linked list of builtins
+ * @name: name of builtin
+ * @p: pointer to function
+ *
+ * Description: struct for builtin functions.
+ */
 typedef struct built_s
 {
-		char *name;
-			int (*p)(void);
+	char *name;
+	int (*p)(void);
 } built_s;
 
 void prompt(int fd, struct stat buf);
