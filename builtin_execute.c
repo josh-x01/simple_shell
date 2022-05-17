@@ -1,9 +1,9 @@
 #include "shell.h"
 /**
- * builtin_execute - executes the built in functions
- * @tokens: arguments being passed
- * Return: tokens
- */
+**builtin_execute - executes the built in functions
+**@tokens: arguments being passed
+**Return: tokens
+**/
 int builtin_execute(char **tokens)
 {
 	int status;
@@ -17,7 +17,6 @@ int builtin_execute(char **tokens)
 		{NULL, NULL}
 	};
 
-
 	if (tokens[0] == NULL)
 		return (1);
 
@@ -29,16 +28,17 @@ int builtin_execute(char **tokens)
 		if (_strcmp(tokens[0], builtin[i].name, length) == 0)
 		{
 			status = (builtin[i].p)();
-			return (status);																											}
+			return (status);
+		}
 	}
 	return (1);
 }
 
 /**
- * shell_num_builtins - this check num built-ins
- * @builtin: takes the builtin to be counted
- * Return: num of built-ins
- */
+**shell_num_builtins - this check num built-ins
+**@builtin: takes the builtin to be counted
+**Return: num of built-ins
+**/
 
 int shell_num_builtins(built_s builtin[])
 {

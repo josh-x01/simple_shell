@@ -32,14 +32,14 @@ int main(void)
 			continue;
 		if (builtin_status == -1)
 			_exit(EXIT_SUCCESS);
-
 		flag = 0; /* 0 if full_path is not malloc'd */
 		path = _getenv("PATH");
 		fullpath = _which(tokens[0], fullpath, path);
 		if (fullpath == NULL)
 			fullpath = tokens[0];
 		else
-			flag = 1; /* if fullpath was malloc'd, flag to free */																																							child_status = child(fullpath, tokens);
+			flag = 1; /* if fullpath was malloc'd, flag to free */
+		child_status = child(fullpath, tokens);
 		if (child_status == -1)
 			errors(2);
 		free_all(tokens, path, line, fullpath, flag);

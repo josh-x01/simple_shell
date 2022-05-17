@@ -49,7 +49,7 @@ int _strncmp(char *name, char *variable, unsigned int length)
 }
 
 /**
- *_strcpy - copies string pointed to by src to the buffer pointed to dest
+ * *_strcpy - copies string pointed to by src to the buffer pointed to dest
  * @dest: string destination
  * @src: string source
  * Return: the pointer to dest
@@ -75,6 +75,7 @@ int _strlen(char *s)
 
 	while (s[i] != '\0')
 		i++;
+
 	return (i);
 }
 

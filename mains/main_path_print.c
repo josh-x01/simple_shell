@@ -7,5 +7,6 @@
 int main(void)
 {
 	path_print();
+
 	return (0);
 }

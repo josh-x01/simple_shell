@@ -41,17 +41,19 @@ char *_getenv(const char *name)
 			}
 			path = _strcpy(path, value);
 			free_dp(environ_copy, environ_length);
-			return (path);}
-		i++;}
-	return (NULL);}
-	/**
-	 * copy_env - copies environment variable
-	 * @environ_copy: pointer to copy of environment variable
-	 * @environ_length: length of environment variable
-	 *
-	 * Return: double pointer to copy of environment variable
-	 */
+			return (path);
+		}
+		i++;
+	}
+	return (NULL);
+}
 
+/**
+ * copy_env - copies environment variable
+ * @environ_copy: pointer to copy of environment variable
+ * @environ_length: length of environment variable
+ * Return: double pointer to copy of environment variable
+ */
 char **copy_env(char **environ_copy, unsigned int environ_length)
 {
 	char *variable;
@@ -64,18 +66,22 @@ char **copy_env(char **environ_copy, unsigned int environ_length)
 		errors(3);
 		return (NULL);
 	}
+
 	i = 0;
 	while (i < environ_length)
 	{
 		variable = environ[i];
 		variable_length = _strlen(variable);
+
 		environ_copy[i] = malloc(sizeof(char) * variable_length + 1);
 		if (environ_copy[i] == NULL)
 		{
 			errors(3);
-			return (NULL);																												}		_strcpy(environ_copy[i], environ[i]);
+			return (NULL);
+		}
+		_strcpy(environ_copy[i], environ[i]);
+		i++;
+	}
 
-		i++;}
-			
 	return (environ_copy);
 }

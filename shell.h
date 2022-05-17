@@ -24,7 +24,7 @@ extern char **environ;
  * @next: pointer to next node
  *
  * Description: generic linked list struct for variables.
- */
+**/
 typedef struct list_s
 {
 	char *value;
@@ -37,7 +37,7 @@ typedef struct list_s
  * @p: pointer to function
  *
  * Description: struct for builtin functions.
- */
+**/
 typedef struct built_s
 {
 	char *name;
@@ -73,3 +73,6 @@ list_s *pathlist(char *variable, list_s *head);
 void free_all(char **tokens, char *path, char *line, char *fullpath, int flag);
 void free_dp(char **array, unsigned int length);
 #endif /*SHELL_H */
+
+
+
